@@ -27,6 +27,7 @@ header {
 .game_img {
   width: 100%;
   height: auto;
+  cursor: url('./assets/custom-cursor.svg') 50 50, auto;
 }
 
 footer {
