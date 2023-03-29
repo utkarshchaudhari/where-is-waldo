@@ -20,7 +20,21 @@ header {
   color: #ff0000;
 }
 
+.game_container {
+  background-color: #0e0c31;
+}
+
 .game_img {
   width: 100%;
   height: auto;
+}
+
+footer {
+  background-color: #0e0c31;
+  color: #ffffff;
+  height: 30px;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
