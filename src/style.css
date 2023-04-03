@@ -22,12 +22,41 @@ header {
 
 .game_container {
   background-color: #0e0c31;
+  cursor: url('./assets/custom-cursor.svg') 50 50, auto;
 }
 
 .game_img {
   width: 100%;
   height: auto;
-  cursor: url('./assets/custom-cursor.svg') 50 50, auto;
+}
+
+.contextMenu {
+  position: absolute;
+  height: 96px;
+  width: 96px;
+  border: 5px dashed #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff4c;
+}
+
+.contextMenu_list {
+  cursor: pointer;
+  list-style: none;
+  background-color: #ffffffcc;
+  border-radius: 5px;
+  transform: translate(70%, 60%);
+  overflow: hidden;
+}
+
+.contextMenu_list > li {
+  padding: 8px 12px;
+  transition: all 300ms ease;
+}
+
+.contextMenu_list > li:hover {
+  transform: scale(1.1);
+  background-color: #ffffffe6;
 }
 
 footer {
