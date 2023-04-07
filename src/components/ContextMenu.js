@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ContextMenu({ xPos, yPos }) {
+function ContextMenu({ xPos, yPos, handleClick }) {
   return (
     <div
       className="contextMenu"
@@ -10,9 +10,9 @@ function ContextMenu({ xPos, yPos }) {
       }}
     >
       <ul className="contextMenu_list">
-        <li>Bowser</li>
-        <li>Yubaba</li>
-        <li>The Knight</li>
+        <li onClick={(e) => handleClick(e.target.innerText)}>Bowser</li>
+        <li onClick={(e) => handleClick(e.target.innerText)}>Yubaba</li>
+        <li onClick={(e) => handleClick(e.target.innerText)}>The Knight</li>
       </ul>
     </div>
   );
