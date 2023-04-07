@@ -8,6 +8,9 @@
 }
 
 header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   background-color: #0e0c31;
   color: #ffffff;
   height: 60px;
@@ -18,6 +21,17 @@ header {
 
 .red {
   color: #ff0000;
+}
+
+.items_left {
+  height: 42px;
+  width: 42px;
+  font-size: 26px;
+  background-color: #8d0c0c;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .game_container {

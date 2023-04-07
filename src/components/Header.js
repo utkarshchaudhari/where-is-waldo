@@ -1,12 +1,13 @@
 import React from 'react';
 
-function Header() {
+function Header({ number }) {
   return (
-    <div>
-      <header>
+    <header>
+      <div className="title">
         Find<span className="red">Us</span>
-      </header>
-    </div>
+      </div>
+      <div className="items_left">{number}</div>
+    </header>
   );
 }
 

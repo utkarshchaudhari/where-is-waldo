@@ -4,10 +4,9 @@ import ContextMenu from './ContextMenu';
 import { db } from '../firebase';
 import { getDoc, doc } from 'firebase/firestore';
 
-function Game() {
+function Game({ list, updateList }) {
   const [contextMenu, setContextMenu] = useState(false);
   const [pos, setPos] = useState({});
-  const [list, setList] = useState(['Bowser', 'Yubaba', 'The Knight']);
   const imgRef = useRef();
 
   async function userClick(e) {
@@ -23,7 +22,7 @@ function Game() {
 
     if (x === itemCoords.x && y === itemCoords.y) {
       console.log('Found it');
-      setList((list) => list.filter((item) => item !== itemName));
+      updateList(itemName);
     } else {
       console.log('Keep Looking');
     }
