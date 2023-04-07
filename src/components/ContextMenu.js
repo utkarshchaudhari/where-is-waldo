@@ -1,6 +1,7 @@
 import React from 'react';
+import { v4 } from 'uuid';
 
-function ContextMenu({ xPos, yPos, handleClick }) {
+function ContextMenu({ xPos, yPos, handleClick, list }) {
   return (
     <div
       className="contextMenu"
@@ -10,9 +11,11 @@ function ContextMenu({ xPos, yPos, handleClick }) {
       }}
     >
       <ul className="contextMenu_list">
-        <li onClick={(e) => handleClick(e.target.innerText)}>Bowser</li>
-        <li onClick={(e) => handleClick(e.target.innerText)}>Yubaba</li>
-        <li onClick={(e) => handleClick(e.target.innerText)}>The Knight</li>
+        {list.map((item) => (
+          <li key={v4()} onClick={() => handleClick(item)}>
+            {item}
+          </li>
+        ))}
       </ul>
     </div>
   );

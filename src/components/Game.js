@@ -7,6 +7,7 @@ import { getDoc, doc } from 'firebase/firestore';
 function Game() {
   const [contextMenu, setContextMenu] = useState(false);
   const [pos, setPos] = useState({});
+  const [list, setList] = useState(['Bowser', 'Yubaba', 'The Knight']);
   const imgRef = useRef();
 
   async function userClick(e) {
@@ -22,6 +23,7 @@ function Game() {
 
     if (x === itemCoords.x && y === itemCoords.y) {
       console.log('Found it');
+      setList((list) => list.filter((item) => item !== itemName));
     } else {
       console.log('Keep Looking');
     }
@@ -30,7 +32,12 @@ function Game() {
     <div className="game_container" onClick={(e) => userClick(e)} ref={imgRef}>
       <img src={gamePic} alt="game-pic" className="game_img" />
       {contextMenu && (
-        <ContextMenu xPos={pos.x} yPos={pos.y} handleClick={handleClick} />
+        <ContextMenu
+          xPos={pos.x}
+          yPos={pos.y}
+          handleClick={handleClick}
+          list={list}
+        />
       )}
     </div>
   );
