@@ -8,6 +8,8 @@
 }
 
 header {
+  position: fixed;
+  width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -80,7 +82,7 @@ header {
   color: #ffffff;
   padding: 8px 16px;
   border-radius: 5px;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
 }
 
 footer {
