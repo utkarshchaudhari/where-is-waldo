@@ -3,10 +3,13 @@ import gamePic from '../assets/game-pic.jpg';
 import ContextMenu from './ContextMenu';
 import { db } from '../firebase';
 import { getDoc, doc } from 'firebase/firestore';
+import SnackBar from './SnackBar';
 
 function Game({ list, updateList }) {
   const [contextMenu, setContextMenu] = useState(false);
   const [pos, setPos] = useState({});
+  const [snackBar, setSnackBar] = useState(false);
+  const [snackBarMessage, setSnackBarMessage] = useState('');
   const imgRef = useRef();
 
   async function userClick(e) {
@@ -21,11 +24,15 @@ function Game({ list, updateList }) {
     const y = +((pos.y - 60) / imgRef.current.offsetHeight).toFixed(2);
 
     if (x === itemCoords.x && y === itemCoords.y) {
-      console.log('Found it');
       updateList(itemName);
+      setSnackBarMessage(`You found ${itemName}!`);
     } else {
-      console.log('Keep Looking');
+      setSnackBarMessage('Keep Looking!');
     }
+    setSnackBar(true);
+    setTimeout(() => {
+      setSnackBar(false);
+    }, 3000);
   }
   return (
     <div className="game_container" onClick={(e) => userClick(e)} ref={imgRef}>
@@ -38,6 +45,7 @@ function Game({ list, updateList }) {
           list={list}
         />
       )}
+      {snackBar && <SnackBar message={snackBarMessage} />}
     </div>
   );
 }

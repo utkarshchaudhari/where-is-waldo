@@ -73,6 +73,16 @@ header {
   background-color: #ffffffe6;
 }
 
+.snackbar {
+  position: fixed;
+  top: 15%;
+  left: 50%;
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 5px;
+  transform: translateX(-50%);
+}
+
 footer {
   background-color: #0e0c31;
   color: #ffffff;
