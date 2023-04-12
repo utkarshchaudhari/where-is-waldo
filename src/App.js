@@ -8,6 +8,7 @@ import './style.css';
 function App() {
   const [list, setList] = useState(['Bowser', 'Yubaba', 'The Knight']);
   const [modal, setModal] = useState(true);
+  const [timeIsRunning, setTimeIsRunning] = useState(false);
 
   function updateList(itemName) {
     setList((list) => list.filter((item) => item !== itemName));
@@ -15,11 +16,12 @@ function App() {
 
   function toggleModal() {
     setModal(false);
+    setTimeIsRunning(true);
   }
 
   return (
     <div className="App">
-      <Header number={list.length} />
+      <Header number={list.length} timeIsRunning={timeIsRunning} />
       <Game list={list} updateList={updateList} />
       {modal && <Modal toggleModal={toggleModal} />}
       <Footer />
