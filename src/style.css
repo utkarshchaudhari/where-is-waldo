@@ -17,7 +17,6 @@ header {
   color: #ffffff;
   height: 60px;
   font-size: 32px;
-  line-height: 60px;
   text-align: center;
 }
 
@@ -30,14 +29,31 @@ header {
 }
 
 .items_left {
+  cursor: pointer;
   height: 42px;
   width: 42px;
   font-size: 26px;
+  color: #ffffff;
   background-color: #8d0c0c;
+  border: none;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.items_left:hover {
+  background-color: #f10808;
+}
+
+.dropdown_menu {
+  position: absolute;
+  top: 58px;
+  transform: translateX(-87%);
+  width: 320px;
+  background-color: #17134d;
+  border-radius: 5px;
+  padding: 8px 0;
 }
 
 .game_container {
@@ -147,10 +163,12 @@ header {
   display: flex;
   flex-direction: column;
   padding: 0 22px 12px 22px;
+  letter-spacing: 1px;
 }
 
 .item_root > h3 {
   text-align: right;
+  font-size: 18px;
 }
 
 .easy {
@@ -180,6 +198,14 @@ header {
   text-align: center;
 }
 
+.item_description > h3 {
+  font-size: 18px;
+}
+
+.item_description > h5 {
+  font-size: 12px;
+}
+
 .btn {
   cursor: pointer;
   max-width: 142px;
@@ -193,6 +219,7 @@ header {
 }
 
 .title,
+.items_left,
 .item_container,
 .btn {
   transition: all 300ms ease;
