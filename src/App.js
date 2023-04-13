@@ -29,6 +29,7 @@ function App() {
 
   function restartGame() {
     setList(['Bowser', 'Yubaba', 'The Knight']);
+    setTimeIsRunning(false);
     setRestartModal(false);
     setModal(true);
   }
@@ -39,6 +40,7 @@ function App() {
         number={list.length}
         timeIsRunning={timeIsRunning}
         timeRef={timeRef}
+        restartGame={restartGame}
       />
       <Game list={list} updateList={updateList} />
       {modal && <Modal startGame={startGame} />}
