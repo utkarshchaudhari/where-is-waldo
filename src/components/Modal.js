@@ -2,7 +2,7 @@ import React from 'react';
 import gamePic from '../assets/game-pic.jpg';
 import FindItemList from './FindItemList';
 
-function Modal({ toggleModal }) {
+function Modal({ startGame }) {
   return (
     <div id="modal">
       <div className="modal_root">
@@ -16,7 +16,7 @@ function Modal({ toggleModal }) {
           <div className="right_container">
             <h2>The Universe</h2>
             <FindItemList />
-            <button className="btn" onClick={toggleModal}>
+            <button className="btn" onClick={startGame}>
               START
             </button>
           </div>

@@ -22,7 +22,7 @@ function App() {
     }
   }
 
-  function toggleModal() {
+  function startGame() {
     setModal(false);
     setTimeIsRunning(true);
   }
@@ -41,7 +41,7 @@ function App() {
         timeRef={timeRef}
       />
       <Game list={list} updateList={updateList} />
-      {modal && <Modal toggleModal={toggleModal} />}
+      {modal && <Modal startGame={startGame} />}
       {restartModal && (
         <RestartModal
           time={timeRef.current.textContent}
