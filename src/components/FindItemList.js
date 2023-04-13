@@ -5,7 +5,7 @@ import knightPic from '../assets/the-knight.webp';
 import FindItem from './FindItem';
 import { v4 } from 'uuid';
 
-function FindItemList() {
+function FindItemList({ list = ['Bowser', 'Yubaba', 'The Knight'] }) {
   const data = [
     {
       itemName: 'Bowser',
@@ -28,9 +28,13 @@ function FindItemList() {
   ];
   return (
     <div className="items_container">
-      {data.map((item) => (
-        <FindItem item={item} key={v4()} />
-      ))}
+      {data.map((item) =>
+        list.includes(item.itemName) ? (
+          <FindItem item={item} key={v4()} />
+        ) : (
+          <FindItem item={item} key={v4()} itemFound=" item_found" />
+        )
+      )}
     </div>
   );
 }

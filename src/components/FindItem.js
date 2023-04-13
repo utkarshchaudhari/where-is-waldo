@@ -1,10 +1,10 @@
 import React from 'react';
 
-function FindItem({ item }) {
+function FindItem({ item, itemFound = '' }) {
   return (
     <div className="item_root">
       <h3 className={item.itemLevel}>{item.itemLevel}</h3>
-      <div className="item_container">
+      <div className={`item_container${itemFound}`}>
         <div className="item_img">
           <img className="item_img" src={item.itemPic} alt={item.itemName} />
         </div>

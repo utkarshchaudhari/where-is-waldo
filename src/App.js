@@ -37,7 +37,7 @@ function App() {
   return (
     <div className="App">
       <Header
-        number={list.length}
+        list={list}
         timeIsRunning={timeIsRunning}
         timeRef={timeRef}
         restartGame={restartGame}

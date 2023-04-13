@@ -206,6 +206,12 @@ header {
   font-size: 12px;
 }
 
+.item_found {
+  text-decoration: line-through;
+  -webkit-filter: invert(50%);
+  filter: invert(50%);
+}
+
 .btn {
   cursor: pointer;
   max-width: 142px;

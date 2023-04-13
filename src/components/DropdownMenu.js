@@ -1,10 +1,10 @@
 import React from 'react';
 import FindItemList from './FindItemList';
 
-function DropdownMenu() {
+function DropdownMenu({ list }) {
   return (
     <div className="dropdown_menu">
-      <FindItemList />
+      <FindItemList list={list} />
     </div>
   );
 }
