@@ -16,7 +16,7 @@ function Modal({ toggleModal }) {
           <div className="right_container">
             <h2>The Universe</h2>
             <FindItemList />
-            <button className="start_btn" onClick={toggleModal}>
+            <button className="btn" onClick={toggleModal}>
               START
             </button>
           </div>

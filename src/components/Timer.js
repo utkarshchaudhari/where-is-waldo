@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-function Timer({ timeIsRunning }) {
+function Timer({ timeIsRunning, timeRef }) {
   const [time, setTime] = useState(0);
 
   useEffect(() => {
@@ -10,6 +10,8 @@ function Timer({ timeIsRunning }) {
       intervalID = setInterval(() => {
         setTime((prevTime) => prevTime + 1);
       }, 1000);
+    } else {
+      setTime(0);
     }
 
     return () => {
@@ -21,7 +23,7 @@ function Timer({ timeIsRunning }) {
   const hours = `0${Math.floor(time / 3600)}`.slice(-2);
 
   return (
-    <div>
+    <div ref={timeRef}>
       {hours}:{minutes}:{`0${time % 60}`.slice(-2)}
     </div>
   );
