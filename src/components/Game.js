@@ -20,10 +20,11 @@ function Game({ list, updateList }) {
   async function handleClick(itemName) {
     const coords = await getDoc(doc(db, 'coords', itemName));
     const itemCoords = coords.data();
-    const x = +(pos.x / imgRef.current.offsetWidth).toFixed(2);
-    const y = +((pos.y - 60) / imgRef.current.offsetHeight).toFixed(2);
+    const x = Math.round(itemCoords.x * imgRef.current.clientWidth);
+    const y = Math.round(itemCoords.y * imgRef.current.clientHeight);
+    const d = Math.sqrt((x - pos.x) ** 2 + (y - pos.y) ** 2);
 
-    if (x === itemCoords.x && y === itemCoords.y) {
+    if (d < 48) {
       updateList(itemName);
       setSnackBarMessage(`You found ${itemName}!`);
     } else {
