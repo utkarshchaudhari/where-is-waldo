@@ -132,6 +132,8 @@ header {
   border-radius: 25px;
   overflow: hidden;
   display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .left_container {
@@ -235,6 +237,16 @@ header {
 .item_container:hover,
 .btn:hover {
   transform: scale(1.1);
+}
+
+.highscore_container > h1 {
+  margin-bottom: 8px;
+}
+
+.leader_name {
+  font-size: 22px;
+  padding-left: 32px;
+  list-style-position: outside;
 }
 
 footer {
