@@ -19,12 +19,12 @@ function Timer({ timeIsRunning, timeRef }) {
     };
   }, [timeIsRunning]);
 
-  const minutes = `0${Math.floor(time / 60)}`.slice(-2);
+  const minutes = Math.floor(time / 60);
   const hours = `0${Math.floor(time / 3600)}`.slice(-2);
 
   return (
     <div ref={timeRef}>
-      {hours}:{minutes}:{`0${time % 60}`.slice(-2)}
+      {hours}:{`0${minutes % 60}`.slice(-2)}:{`0${time % 60}`.slice(-2)}
     </div>
   );
 }
